@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --dark-color: #ff6600;
+  --light-color: #ffa366;
+}
+
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+svg{
+  cursor: pointer;
+}
+
+#DarkGroup{
+  fill:var(--dark-color);
+}
+
+#LightGroup{
+  fill:var(--light-color);
+}
+
+#Light1,#Dark2,#Dark1{
+  transition: all 0.5s ease;
+}
+
+#Dark2{
+  transform: translateY(-100%);
+}
+
+svg:hover #Light1{
+  transform: translateY(20%);
+}
+
+svg:hover #Dark1{
+  transform: translateY(40%);
+  opacity: 0;
+}
+
+svg:hover #Dark2{
+  transform: translateY(0%);
+}
+
+.flipped{
+  transform: scale(1, -1);
+}
