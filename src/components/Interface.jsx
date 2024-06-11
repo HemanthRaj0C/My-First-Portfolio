@@ -1,3 +1,8 @@
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import { useState } from "react";
+import img from "./ContactFrom.jpg";
+
 const Section = (props) => {
 
     const {children}=props;
@@ -74,7 +79,7 @@ const AboutSection=(props)=>{
     <Section>
         <h1>About Me</h1>
         <div className="flex items-stretch">
-        <div className="mr-10">
+        <div className="mr-10 mt-7">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-1" clip-path="url(#clip0_1_2)">
             <g id="LightGroup">
@@ -132,7 +137,7 @@ const SkillSection=(props)=>{
     <Section>
         <h1>Skills</h1>
         <div className="flex items-stretch">
-        <div className="mr-10">
+        <div className="mr-10 mt-7">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-2" clip-path="url(#clip0_1_2)">
             <g id="LightGroup">
@@ -190,7 +195,7 @@ const ProjectSection=(props)=>{
     <Section>
         <h1>Projects</h1>
         <div className="flex items-stretch">
-        <div className="mr-10">
+        <div className="mr-10 mt-7">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-3" clip-path="url(#clip0_1_2)">
             <g id="LightGroup">
@@ -236,6 +241,15 @@ const ContactSection=(props)=>{
     const { setSection } = props;
     const svg4 = document.getElementById('triangles-4');
     const svgFlip4 = document.getElementById('triangles-flip-4');
+    const [state, handleSubmit] = useForm("xrgnnpgd");
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [isFormValid, setIsFormValid] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setIsFormValid(formData.name.trim() !== "" || formData.email.trim() !== "" || formData.message.trim() !== "");
+    };
 
     if(svg4){
         svg4.onclick=()=>setSection(0)
@@ -246,15 +260,84 @@ const ContactSection=(props)=>{
     
     return (<>
     <Section>
-        <h1>Contact Me</h1>
-        <div className="flex items-stretch">
-        <div className="mr-10">
+    <div className="bg-gray-400 p-11 mt-14 pt-14 pb-14 ml-8 rounded-2xl bg-opacity-50 border-4 border-black shadow-lg shadow-white/50 flex items-stretch">
+    <div className=''>
+                    <h1 className="font-bold text-3xl text-center border-2 rounded-2xl pt-1 pb-1 pl-0">Contact Us</h1><br />
+                    {state.succeeded ? (
+                        <h2 className="text-orange-500 font-bold text-2xl text-center p-16 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] transition-transform duration-300 transform hover:scale-125 hover:text-orange-600 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Thank You for you Message!</h2>
+                    ) : (
+                        <form onSubmit={handleSubmit}>
+                            <div className="pt-0 pb-3">
+                                <br />
+                                <label htmlFor="" className="text-xl">
+                                    Enter Your Name:&emsp;
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="rounded-lg pl-1"
+                                    required
+                                />
+                                <br />
+                                <br />
+                                <label htmlFor="" className="text-xl">
+                                    Enter Your E-Mail:&emsp;
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="rounded-lg pl-1"
+                                    required
+                                />
+                                <br />
+                                <br />
+                                <label htmlFor="" className="text-xl">
+                                    Message:
+                                </label>
+                                <br />
+                                <br />
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className="rounded-lg pl-1"
+                                    required
+                                />
+                            </div>
+                            <ValidationError
+                                    className="mt-1 text-red-600 text-2xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]"
+                                    errors={state.errors}
+                            />
+                            <button
+                            disabled={state.submitting || !isFormValid}
+                            className={`border-black border-2 rounded-full p-2 mt-3 bg-orange-500 shadow-lg shadow-orange-500/50 transition-transform duration-200 transform hover:scale-110 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${
+                                state.submitting || !isFormValid ? 'cursor-not-allowed hover:opacity-1' : ''
+                            }`}
+                            title={state.submitting || !isFormValid ? 'Please fill all the required details' : ''}
+                            >
+                            Send Message
+                            </button>
+                        </form>
+                    )}
+        </div>
+        <div className='pl-10 pt-5'>
+        <img src={img} width={505} height={505} className='border-4 border-black rounded-full transition-transform duration-300 transform hover:scale-90 hover:border-orange-600'/>
+        </div>
+    </div>
+
+
+        <div className="flex items-stretch ml-96 mt-5">
+        <div className="mr-10 mt-7">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-4" clip-path="url(#clip0_1_2)">
-            <g id="LightGroup">
+            <g id="LightGroup" className=''>
             <path id="Light1" opacity="0.8" d="M60.573 43.7085C59.408 45.6517 56.592 45.6517 55.427 43.7085L37.3409 13.5426C36.142 11.5431 37.5824 9 39.9139 9L76.0861 9C78.4176 9 79.858 11.5431 78.6591 13.5426L60.573 43.7085Z"/>
             </g>
-            <g id="DarkGroup">
+            <g id="DarkGroup" className=''>
             <path id="Dark2" d="M60.573 43.7085C59.408 45.6517 56.592 45.6517 55.427 43.7085L37.3409 13.5426C36.142 11.5431 37.5824 9 39.9139 9L76.0861 9C78.4176 9 79.858 11.5431 78.6591 13.5426L60.573 43.7085Z" fill-opacity="0.8"/>
             <path id="Dark1" d="M60.573 55.7085C59.408 57.6517 56.592 57.6517 55.427 55.7085L37.3409 25.5426C36.142 23.5431 37.5824 21 39.9139 21L76.0861 21C78.4176 21 79.858 23.5431 78.6591 25.5426L60.573 55.7085Z" fill-opacity="0.8"/>
             </g>
