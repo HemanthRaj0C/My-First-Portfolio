@@ -4,11 +4,12 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 export const ScrollManager = (props) => {
-  
+
   const { section, onSectionChange } = props;
   const data = useScroll();
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
+  const currentSection = useRef(0);
 
   data.fill.classList.add("top-0");
   data.fill.classList.add("absolute");
@@ -27,56 +28,31 @@ export const ScrollManager = (props) => {
   }, [section]);
 
   useFrame(() => {
+
     if (isAnimating.current) {
       lastScroll.current = data.scroll.current;
       return;
     }
 
+    const scrollDirection = data.scroll.current - lastScroll.current;
     const curSection = Math.floor(data.scroll.current * data.pages);
-    if (data.scroll.current > lastScroll.current && curSection === 0) {
-      onSectionChange(1);
-    } else if (
-      data.scroll.current > lastScroll.current &&
-      curSection === 1
-    ) {
-      onSectionChange(2);
-    } else if (
-      data.scroll.current > lastScroll.current &&
-      curSection === 2
-    ) {
-      onSectionChange(3);
-    } else if (
-      data.scroll.current > lastScroll.current &&
-      curSection === 3
-    ) {
-      onSectionChange(4);
-    } else if (
-      data.scroll.current < lastScroll.current &&
-      data.scroll.current < 1 / (data.pages - 1)
-    ) {
-      onSectionChange(0);
-    } else if (
-      data.scroll.current < lastScroll.current &&
-      curSection === 1
-    ) {
-      onSectionChange(0);
-    } else if (
-      data.scroll.current < lastScroll.current &&
-      curSection === 2
-    ) {
-      onSectionChange(1);
-    } else if (
-      data.scroll.current < lastScroll.current &&
-      curSection === 3
-    ) {
-      onSectionChange(2);
-    } else if (
-      data.scroll.current < lastScroll.current &&
-      curSection === 4
-    ) {
-      onSectionChange(3);
+
+    if (scrollDirection > 0) {
+
+      if (curSection === currentSection.current + 1) {
+        currentSection.current = curSection;
+        onSectionChange(curSection);
+      }
+    } else if (scrollDirection < 0) {
+
+      if (curSection === currentSection.current - 1) {
+        currentSection.current = curSection;
+        onSectionChange(curSection);
+      }
     }
+
     lastScroll.current = data.scroll.current;
+    
   });
 
   return null;

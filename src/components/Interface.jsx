@@ -26,7 +26,7 @@ export const Interface = (props) => {
 }
 
 const HomeSection=(props)=>{
-
+    const {setSection}=props
     var time=new Date().getHours();
     var greeting=""
     if(time<12){
@@ -39,7 +39,7 @@ const HomeSection=(props)=>{
         greeting="Good Evening"
     }
 
-    const {setSection}=props
+
 
     return (<>
     <Section>
