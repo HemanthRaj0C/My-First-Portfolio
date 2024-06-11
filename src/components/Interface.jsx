@@ -27,11 +27,24 @@ export const Interface = (props) => {
 
 const HomeSection=(props)=>{
 
+    var time=new Date().getHours();
+    var greeting=""
+    if(time<12){
+        greeting="Good Morning"
+    }
+    else if(time<18){
+        greeting="Good Afternoon"
+    }
+    else{
+        greeting="Good Evening"
+    }
+
     const {setSection}=props
 
     return (<>
     <Section>
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1">Welcome to My Portfolio</h1>
+        <h1 className="text-3xl font-bold bg-indigo-500 text-transparent bg-clip-text p-1">{greeting}</h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1">Hi, my name is <span className="text-4xl">Hemanth Raj</span></h1>
         <div className="flex items-stretch">
         <button onClick={()=>setSection(1)} className="m-2">About Me</button>
         <button onClick={()=>setSection(2)} className="m-2">Skills</button>
