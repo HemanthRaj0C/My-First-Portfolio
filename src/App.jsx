@@ -33,17 +33,17 @@ function App() {
     <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
       <color attach="background" args={["#ececec"]} />
       <ScrollControls pages={5} damping={0.1}>
-      <ScrollManager section={section} onSectionChange={setSection} />
+      <ScrollManager section={section} onSectionChange={setSection} setSection={setSection} />
       <Scroll>
       <Experience section={section} menuOpened={menuOpened}/>
       </Scroll>
         <Scroll html>
-          <Interface setSection={setSection}/>
+          <Interface setSection={setSection} section={section} onSectionChange={setSection} />
         </Scroll>
       </ScrollControls>
     </Canvas>
     <Menu onSectionChange={setSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
-    <Cursor />
+
     <Leva hidden />
     </MotionConfig>
     </>

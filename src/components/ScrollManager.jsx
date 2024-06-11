@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 
 export const ScrollManager = (props) => {
 
-  const { section, onSectionChange } = props;
+  const { section, onSectionChange, setSection } = props;
   const data = useScroll();
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
@@ -42,12 +42,16 @@ export const ScrollManager = (props) => {
       if (curSection === currentSection.current + 1) {
         currentSection.current = curSection;
         onSectionChange(curSection);
+        setSection(curSection);
+        lastScroll.current = data.scroll.current;
       }
     } else if (scrollDirection < 0) {
 
       if (curSection === currentSection.current - 1) {
         currentSection.current = curSection;
         onSectionChange(curSection);
+        setSection(curSection);
+        lastScroll.current = data.scroll.current;
       }
     }
 

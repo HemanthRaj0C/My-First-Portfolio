@@ -43,13 +43,15 @@ const HomeSection=(props)=>{
 
     return (<>
     <Section>
-        <h1 className="text-3xl font-bold bg-indigo-500 text-transparent bg-clip-text p-1">{greeting}</h1>
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1">Hi, my name is <span className="text-4xl">Hemanth Raj</span></h1>
-        <div className="flex items-stretch">
-        <button onClick={()=>setSection(1)} className="m-2">About Me</button>
-        <button onClick={()=>setSection(2)} className="m-2">Skills</button>
-        <button onClick={()=>setSection(3)} className="m-2">Projects</button>
-        <button onClick={()=>setSection(4)}className="m-2">Contact Me</button>
+        <h1 className="text-3xl font-bold bg-indigo-500 text-transparent bg-clip-text p-1 mt-20">{greeting}</h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1 pb-2">Hi, my name is <span className="text-5xl pb-2 transition-transform duration-300 hover:bg-yellow-500 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-transparent bg-clip-text">Hemanth Raj</span></h1>
+        <h3 className="text-2xl p-1 pt-10">I'm a <span className="text-2xl p-1 pt-5 font-bold">Web Developer, 3D Artist and Designer</span></h3>
+        <h3 className="text-2xl p-1">I love to <span className="text-2xl p-1 font-bold">create good looking and beautiful websites</span></h3>
+        <div className="flex items-stretch mt-20 ">
+        <button onClick={()=>setSection(1)} className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">About Me</button>
+        <button onClick={()=>setSection(2)} className="p-2 mr-4 border-2 pl-4 pr-4 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Skills</button>
+        <button onClick={()=>setSection(3)} className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Projects</button>
+        <button onClick={()=>setSection(4)}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Contact Me</button>
         </div>
     </Section>
     </>)
@@ -115,7 +117,7 @@ const AboutSection=(props)=>{
 
 const SkillSection=(props)=>{
 
-    const { setSection } = props;
+    const { section, onSectionChange, setSection } = props;
     const svg2 = document.getElementById('triangles-2');
     const svgFlip2 = document.getElementById('triangles-flip-2');
 
