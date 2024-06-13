@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
-import retro from "/projects/RetroWebsite.png"
+import retro from "/projects/RetroWebsite-min.png"
 
 
 const dropIn={

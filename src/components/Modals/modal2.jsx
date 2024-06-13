@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
-import portFolio from "/projects/Portfolio.png"
+import portFolio from "/projects/Portfolio-min.png"
 
 
 

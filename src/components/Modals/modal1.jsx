@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
-import chatBox from "/projects/ChatBox.png"
+import chatBox from "/projects/ChatBox-min.png"
 
 
 const dropIn={
