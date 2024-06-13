@@ -53,8 +53,8 @@ export const Experience = (props) => {
 
       <motion.group position-y={0.1} position-x={0} rotation-z={-0.4} rotation-x={-0.3} rotation-y={2.8} scale={[0.4, 0.4, 0.4]}
       animate={{
-        x:section==3?2:3,
-        y:section==3? -8.2:-7.5,
+        x:section==3?1.8:2.8,
+        y:section==3? -8.2:-7.8,
       }}
       >
         <Office />

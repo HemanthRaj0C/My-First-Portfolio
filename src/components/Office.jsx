@@ -1075,8 +1075,8 @@ export function Office(props) {
         </group>
         <group
           name="RootNode002"
-          position={[1.929, 0, -0.655]}
-          rotation={[0, -0.436, 0]}
+          position={[2, 0, 0.1]}
+          rotation={[0, -1.25, 0]}
           scale={0.533}>
           <mesh
             name="Tree_Floating_2"

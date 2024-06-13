@@ -5,6 +5,12 @@ import img from "./ContactFrom.jpg";
 import {motion} from "framer-motion"
 import clg from "./College.jpg"
 import scl from "./School.png"
+import chatBox from "/projects/ChatBox.png"
+import portFolio from "/projects/Portfolio.png"
+import retro from "/projects/RetroWebsite.png"
+import Modal1 from "./Modals/modal1";
+import Modal2 from "./Modals/modal2";
+import Modal3 from "./Modals/modal3";
 
 const Section = (props) => {
 
@@ -49,10 +55,13 @@ const HomeSection=(props)=>{
 
     return (<>
     <Section>
+        <div className="flex flex-col">
         <h1 className="text-3xl font-bold bg-indigo-500 text-transparent bg-clip-text p-1 mt-20">{greeting}</h1>
         <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1 pb-2 ">Hi, my name is <span className="text-5xl pb-2 transition-transform duration-300 hover:bg-orange-400 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-transparent bg-clip-text">Hemanth Raj</span></h1>
+        </div>
         <h3 className="text-2xl p-1 pt-10">I'm a <span className="text-2xl p-1 pt-5 font-bold">Web Developer, 3D Artist and Designer</span></h3>
         <h3 className="text-2xl p-1">I love to <span className="text-2xl p-1 font-bold">create good looking and beautiful websites</span></h3>
+
         <div className="flex items-stretch mt-20 ">
         <button onClick={()=>setSection(1)} className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">About Me</button>
         <button onClick={()=>setSection(2)} className="p-2 mr-4 border-2 pl-4 pr-4 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Skills</button>
@@ -82,7 +91,7 @@ const AboutSection=(props)=>{
 
     return (<>
     <Section>
-        <h1 className='font-bold text-3xl '>About Me</h1>
+        <h1 className='font-bold text-3xl mt-9'>About Me</h1>
         <motion.h2 onClick={handleClick} className='text-xl font-semibold m-5 transition transform duration-500 hover:cursor-pointer hover:bg-gradient-to-r from-red-600 via-yellow-400 to-orange-500 hover:text-transparent hover:bg-clip-text hover:hover:drop-shadow-[0_5px_3px_rgba(0,0,0,0.8)] hover:scale-110 hover:translate-x-7'
         >Do you wanna Know about me?</motion.h2>
         {showDetails && (
@@ -179,7 +188,7 @@ const AboutSection=(props)=>{
                 duration: 0.5,
                 delay: 0.1
             }}
-        className='font-normal text-lg text-black'>I'm just a Random Guy from a small city in <span>Madurai</span>, trying to explore the world through learning.</motion.h3>
+        className='font-normal text-lg text-black'>I'm just a Random Guy from a small city in <span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/XfXJaJERSs14s78L9')} >Madurai</span>, trying to explore the world through learning.</motion.h3>
         <motion.h3 
             initial={{
                 opacity: 0,
@@ -193,7 +202,7 @@ const AboutSection=(props)=>{
                 duration: 0.5,
                 delay: 0.5
             }}
-        className='font-normal text-lg text-black'>Currently, I am a student pursuing UG program in CSE (Cyber Security) from the <span>Chennai Institute of Technology.</span></motion.h3>
+        className='font-normal text-lg text-black'>Currently, I am a student pursuing UG program in CSE (Cyber Security) from the <span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/JZ14TKSqGzMp2s6YA')} >Chennai Institute of Technology.</span></motion.h3>
         <motion.h1 
         initial={{
             opacity: 0,
@@ -224,12 +233,12 @@ const AboutSection=(props)=>{
         >
             <div className='flex border-2 p-2 rounded-xl mb-1'>
                 <img src={clg} alt="College Logo" className='rounded-2xl mr-10' />
-                <h1 className='font-normal text-lg'>Chennai Institute of Technology <br />Bachelor of Engineering in CSE (Cyber Security) CGPA: 9.8/10</h1>
+                <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/JZ14TKSqGzMp2s6YA')}>Chennai Institute of Technology</span> <br />Bachelor of Engineering in CSE (Cyber Security) CGPA: 9.8/10</h1>
                 <h2></h2>
             </div>
             <div className='flex border-2 p-2 rounded-xl'>
                 <img src={scl} alt="School Logo" className='rounded-2xl mr-5'/>
-                <h1 className='font-normal text-lg'>Annamalaiyaar Matriculation Higher Secondary School <br />Higher Secondary Education: 91.83%</h1>
+                <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/CcW4qsS56Cpj6duu5')}>Annamalaiyaar Matriculation Higher Secondary School</span> <br />Higher Secondary Education: 91.83%</h1>
             </div>
         </motion.div>
         <div className="flex items-stretch">
@@ -334,9 +343,35 @@ const SkillSection=(props)=>{
 
 const ProjectSection=(props)=>{
 
+    const [isModal1Open, setIsModal1Open] = useState(false);
+    const openModal1 = () => {
+      setIsModal1Open(true);
+    };
+    const closeModal1 = () => {
+      setIsModal1Open(false);
+    };
+
+    const [isModal2Open, setIsModal2Open] = useState(false);
+    const openModal2 = () => {
+      setIsModal2Open(true);
+    };
+    const closeModal2 = () => {
+      setIsModal2Open(false);
+    };
+
+    const [isModal3Open, setIsModal3Open] = useState(false);
+    const openModal3 = () => {
+      setIsModal3Open(true);
+    };
+    const closeModal3 = () => {
+      setIsModal3Open(false);
+    };
+
     const { setSection } = props;
     const svg3 = document.getElementById('triangles-3');
     const svgFlip3 = document.getElementById('triangles-flip-3');
+
+
 
     if(svg3){
         svg3.onclick=()=>setSection(4)
@@ -347,9 +382,164 @@ const ProjectSection=(props)=>{
 
     return (<>
     <Section>
-        <h1>Projects</h1>
-        <div className="flex items-stretch">
-        <div className="mr-10 mt-7">
+        <motion.h1 className='font-bold text-4xl pl-3 pr-3 cursor-pointer mb-3 mt-8 bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text p-2 border-2 rounded-3xl transition transform duration-500 hover:scale-110 hover:shadow-lg hover:translate-y-2 hover:shadow-white shadow-sm shadow-white '
+        initial={{
+            opacity: 1,
+            y: 25,
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+        }}
+        transition={{
+            duration: 0.2,
+            delay: 0
+        }}
+        >Projects</motion.h1>
+        <motion.h1 className='text-2xl mt-4 ml-2 font-semibold text-white'
+        initial={{
+            opacity: 0,
+            y: -80,
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+        }}
+        transition={{
+            duration: 0.2,
+            delay: 0
+        }}
+        >I have worked on various projects, including Frontend Development and Backend Development.</motion.h1>
+        <motion.h1 className='text-2xl ml-2 mb-10 font-semibold text-white'
+        initial={{
+            opacity: 0,
+            y: -70,
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+        }}
+        transition={{
+            duration: 0.4,
+            delay: 0.2
+        }}
+        >Here are some of the Web Development projects I have worked on:</motion.h1>
+
+
+        <motion.div className='grid grid-cols-3 grid-rows-1 gap-5'>
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+            initial={{
+                opacity: 1,
+                y: -50,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            transition={{
+                duration: 0.2,
+                delay: 0
+            }}
+            whileHover={{
+                scale: 1.075,
+                duration: 0.1
+            }}
+            >
+                <motion.img src={chatBox} alt="Chat-Box" className='border-red-600 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500' 
+                onClick={openModal1}
+                whileHover={{
+                    scale:0.95
+                }}
+                whileTap={{
+                    scale:1
+                }}
+                />
+                
+                <div className='grid grid-cols-4 grid-rows-2'>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>HTML</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>CSS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>JS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>NodeJS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>SASS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90 text-xs pt-1'>BootStrap</h1>
+                </div>
+                <h1 className='pt-3 pb-2 font-semibold text-gray-200'>This is ChatBox, a website which is used <br />to communicate with your Friends and<br /> Family to have FUN.</h1>
+            </motion.div>
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+            initial={{
+                opacity: 1,
+                y: -70,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            transition={{
+                duration: 0.3,
+                delay: 0
+            }}
+            whileHover={{
+                scale: 1.075,
+                duration: 0.1
+            }}>
+                
+            <motion.img src={portFolio} alt="Port-Folio" className='border-green-200 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500'
+            onClick={openModal2}
+            whileHover={{
+                scale:0.95
+            }}
+            whileTap={{
+                scale:1
+            }}
+            />
+                <div className='grid grid-cols-4 grid-rows-2'>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>HTML</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>CSS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>JS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>NodeJS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>ReactJS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>ThreeJS</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>Blender</h1>
+                </div>
+                <h1 className='pt-3 pb-2 font-semibold text-gray-200'>This is a PortFolio website which uses <br />3D Design into the WebPage using<br /> Blender and ThreeJS.</h1>
+            </motion.div>
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+            initial={{
+                opacity: 1,
+                y: -90,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            transition={{
+                duration: 0.4,
+                delay: 0
+            }}
+            whileHover={{
+                scale: 1.075,
+                duration: 0.1
+            }}>
+                
+            <motion.img src={retro} alt="Retro Website" className='border-blue-400 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500'
+            onClick={openModal3}
+            whileHover={{
+                scale:0.95
+            }}
+            whileTap={{
+                scale:1
+            }}
+            />
+                <div className='grid grid-cols-4 grid-rows-1 pt-3 pb-6'>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>HTML</h1>
+                    <h1 className='border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>CSS</h1>
+                </div>
+                <h1 className='pt-3 pb-2 font-semibold text-gray-200'>This is a Retro-Themed website made<br />just using the HTML and CSS.</h1>
+
+            </motion.div>
+        </motion.div>
+        <div className="flex items-stretch ml-96">
+        <div className="mr-10 mt-9">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-3" clip-path="url(#clip0_1_2)">
             <g id="LightGroup">
@@ -387,6 +577,9 @@ const ProjectSection=(props)=>{
         </div>
         </div>
     </Section>
+    {isModal1Open && <Modal1 handleClose={closeModal1} />}
+    {isModal2Open && <Modal2 handleClose={closeModal2} />}
+    {isModal3Open && <Modal3 handleClose={closeModal3} />}
     </>)
 }
 
