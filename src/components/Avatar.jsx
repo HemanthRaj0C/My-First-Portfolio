@@ -18,11 +18,9 @@ export function Avatar(props) {
   const { nodes, materials } = useGLTF('models/Character.glb')
   const {animations:idleAnimation}=useFBX("animations/Breathing Idle.fbx")
   const {animations: waveAnimation}=useFBX("animations/Waving.fbx")
-  const {animations: standAnimation}=useFBX("animations/Standing.fbx")
 
   idleAnimation[0].name="Idle"
   waveAnimation[0].name="Wave"
-  standAnimation[0].name="Stand"
 
   const {actions}=useAnimations([idleAnimation[0], waveAnimation[0]],group)
 

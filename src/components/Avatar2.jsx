@@ -14,12 +14,10 @@ export function Avatar2(props) {
   const {cursorFollow}=useControls({
     cursorFollow: true
   })
-  const {animations: walkAnimation}=useFBX("animations/Stop Walking.fbx")
-  const {animations: idleAnimation} = useFBX("animations/Breathing Idle.fbx")
+
   const {animations: lookAnimation} = useFBX("animations/Looking Around.fbx")
   
-  walkAnimation[0].name="Stop"
-  idleAnimation[0].name="Idle"
+
   lookAnimation[0].name="Look"
 
   const {actions}=useAnimations(lookAnimation,group)
