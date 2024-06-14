@@ -29,6 +29,7 @@ export const LoadingScreen = (props) => {
           ...LoadinG...
         </div>
         <div className="opacity-40">...LoadinG...</div>
+        <div className="opacity-50 text-base text-center">Use Navigation Icon for Better Experience</div>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ import { Leva } from "leva";
 import { Interface } from "./components/Interface";
 import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
-import { Cursor } from "./components/Cursor";
 import { ScrollManager } from "./components/ScrollManager";
 import { Menu } from "./components/Menu";
 import { MotionConfig } from "framer-motion";
@@ -43,7 +42,6 @@ function App() {
       </ScrollControls>
     </Canvas>
     <Menu onSectionChange={setSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
-
     <Leva hidden />
     </MotionConfig>
     </>

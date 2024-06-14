@@ -44,6 +44,7 @@ export const Interface = (props) => {
 const HomeSection=(props)=>{
     const {setSection}=props
     const [showDetails, setShowDetails] = useState(false);
+    
     var time=new Date().getHours();
     var greeting=""
     if(time<12){
@@ -59,6 +60,28 @@ const HomeSection=(props)=>{
     const handleClick = () => {
         setShowDetails(!showDetails);
       };
+    
+    const [rotation1, setRotation1] = useState(0);
+
+    const handleClickRoation1 = () => {
+    setRotation1(rotation1 + 360);
+    };
+
+    const style1 = {
+    transform: `rotate(${rotation1}deg)`,
+    transition: 'transform 0.5s ease-in-out',
+    };
+
+    const [rotation2, setRotation2] = useState(0);
+
+    const handleClickRoation2 = () => {
+    setRotation2(rotation2 + 360);
+    };
+
+    const style2 = {
+    transform: `rotate(${rotation2}deg)`,
+    transition: 'transform 0.5s ease-in-out',
+    };
 
     return (<>
     <Section>
@@ -94,10 +117,10 @@ const HomeSection=(props)=>{
                 delay: 0.1
             }}
             >
-            <img src={github} alt='' className='ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <img src={github} alt='' onClick={handleClickRoation1} style={style1} className='ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
             <button onClick={()=>window.open('https://github.com/HemanthRaj0C')}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">GitHub Profile</button>
-            <img src={resume} alt='' className='mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
-            <button onClick={()=>window.open("https://github.com/HemanthRaj0C")}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
+            <img src={resume} alt='' onClick={handleClickRoation2} style={style2} className='mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <button onClick={()=>window.open("https://docs.google.com/document/d/1aD4aytc_o_Hdr26BJ7iI94ed26ghPdX-9ttBXA3QT4c/edit?usp=sharing")}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
             </motion.div>
             </>
         )}
@@ -472,7 +495,7 @@ const SkillSection=(props)=>{
         <div className='text-center'>
         <motion.div className='grid grid-rows-2 grid-cols-2 gap-4 ml-24'
         >
-            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105 shadow-gray-800 shadow-lg'>
                 <div>
                     <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>FrontEnd Development</h1>
                 </div>
@@ -524,7 +547,7 @@ const SkillSection=(props)=>{
                     </div>
                 </div>
             </div>
-            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105 shadow-gray-800 shadow-lg'>
                 <div>
                     <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>BackEnd Development</h1>
                 </div>
@@ -576,7 +599,7 @@ const SkillSection=(props)=>{
                     </div>
                 </div>
             </div>
-            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105 shadow-gray-800 shadow-lg'>
                 <div>
                     <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>3D Development</h1>
                 </div>
@@ -628,7 +651,7 @@ const SkillSection=(props)=>{
                     </div>
                 </div>
             </div>
-            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105 shadow-gray-800 shadow-lg'>
                 <div>
                     <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>Other Tools</h1>
                 </div>
@@ -812,8 +835,8 @@ const ProjectSection=(props)=>{
             delay: 0.2
         }}
         >Here are some of the Web Development projects I have worked on:</motion.h1>
-        <motion.div className='grid grid-cols-3 grid-rows-1 gap-5'>
-            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+        <motion.div className='grid grid-cols-3 grid-rows-1 gap-5 '>
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500 shadow-gray-500 shadow-lg'
             initial={{
                 opacity: 1,
                 y: -50,
@@ -831,7 +854,7 @@ const ProjectSection=(props)=>{
                 duration: 0.1
             }}
             >
-                <motion.img src={chatBox} alt="Chat-Box" className='border-red-600 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer' 
+                <motion.img src={chatBox} alt="Chat-Box" className='border-red-600 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer ' 
                 onClick={openModal1}
                 whileHover={{
                     scale:0.95
@@ -840,7 +863,7 @@ const ProjectSection=(props)=>{
                     scale:1
                 }}
                 />
-                <div className='grid grid-cols-4 grid-rows-2'>
+                <div className='grid grid-cols-4 grid-rows-2 '>
                     <h1 className='cursor-pointer border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>HTML</h1>
                     <h1 className='cursor-pointer border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>CSS</h1>
                     <h1 className='cursor-pointer border-2 rounded-2xl pl-1 pr-1 text-center mt-1 bg-orange-500 border-black font-semibold tarnsition transform duration-500 hover:scale-90'>JS</h1>
@@ -850,7 +873,7 @@ const ProjectSection=(props)=>{
                 </div>
                 <h1 className='pt-3 pb-2 font-semibold text-gray-200'>This is ChatBox, a website which is used <br />to communicate with your Friends and<br /> Family to have FUN.</h1>
             </motion.div>
-            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500 shadow-gray-500 shadow-lg'
             initial={{
                 opacity: 1,
                 y: -70,
@@ -887,7 +910,7 @@ const ProjectSection=(props)=>{
                 </div>
                 <h1 className='pt-3 pb-2 font-semibold text-gray-200'>This is a PortFolio website which uses <br />3D Design into the WebPage using<br /> Blender and ThreeJS.</h1>
             </motion.div>
-            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500'
+            <motion.div className='p-2 border-4 rounded-3xl border-orange-500 bg-blue-900 backdrop-blur-xl transition tarnsform duration-500 shadow-gray-500 shadow-lg'
             initial={{
                 opacity: 1,
                 y: -90,

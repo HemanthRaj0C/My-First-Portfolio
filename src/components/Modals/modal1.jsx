@@ -2,8 +2,8 @@ import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
 import chatBox from "/projects/ChatBox-min.png"
 
-
 const dropIn={
+
     hidden:{
         y:"-100vh",
         opacity: 0,
@@ -55,7 +55,6 @@ const Modal1=({handleClose, text})=>{
         </BackDrop>
 
     )
-
 
 }
 

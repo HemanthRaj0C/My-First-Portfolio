@@ -2,7 +2,6 @@ import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
 import retro from "/projects/RetroWebsite-min.png"
 
-
 const dropIn={
     hidden:{
         y:"-100vh",
@@ -54,10 +53,7 @@ const Modal=({handleClose, text})=>{
                 </div>
             </motion.div>
         </BackDrop>
-
     )
-
-
 }
 
 export default Modal

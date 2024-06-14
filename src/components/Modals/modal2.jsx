@@ -2,9 +2,8 @@ import {motion} from "framer-motion";
 import BackDrop from "../BackDrop/backDrop";
 import portFolio from "/projects/Portfolio-min.png"
 
-
-
 const dropIn={
+
     hidden:{
         y:"-100vh",
         opacity: 0,
@@ -60,7 +59,6 @@ const Modal=({handleClose, text})=>{
         </BackDrop>
 
     )
-
 
 }
 
