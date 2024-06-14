@@ -24,9 +24,9 @@ function App() {
     <>
     <MotionConfig transition={{
       type: "spring",
-      mass:5,
-      stiffness:500,
-      damping:32,
+      mass:3,
+      stiffness:200,
+      damping:30,
       restDelta:0.001,
     }}>
     <LoadingScreen started={started} setStarted={setStarted} />

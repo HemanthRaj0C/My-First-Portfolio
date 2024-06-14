@@ -64,7 +64,7 @@ const HomeSection=(props)=>{
     <Section>
         <div className="flex flex-col">
         <h1 className="text-3xl font-bold bg-indigo-500 text-transparent bg-clip-text p-1 mt-20">{greeting}</h1>
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1 pb-2 ">Hi, my name is <span className="text-5xl pb-2 transition transform duration-100 hover:bg-orange-500 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] text-transparent bg-clip-text " onClick={handleClick} title={!handleClick ? '' : 'Click Here to see a Suprise'}>Hemanth Raj</span></h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 from-20% via-purple-500 via-30% to-pink-500 to-90% text-transparent bg-clip-text p-1 pb-2 ">Hi, my name is <span className="cursor-pointer text-5xl pb-2 transition transform duration-100 hover:bg-orange-500 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] text-transparent bg-clip-text " onClick={handleClick} title={!handleClick ? '' : 'Click Here to see a Suprise'}>Hemanth Raj</span></h1>
         </div>
         <h3 className="text-2xl p-1 pt-10">I'm a <span className="text-2xl p-1 pt-5 font-bold">Web Developer, 3D Artist and Designer</span></h3>
         <h3 className="text-2xl p-1">I love to <span className="text-2xl p-1 font-bold">create good looking and beautiful websites</span></h3>
@@ -125,7 +125,7 @@ const AboutSection=(props)=>{
 
     return (<>
     <Section>
-        <h1 className='font-bold text-3xl mt-9'>About Me</h1>
+        <h1 className='text-3xl font-bold mb-5 mt-10 border-2 pl-4 pr-4 rounded-2xl pt-1 pb-1 transition transform duration-500 hover:scale-110 hover:shadow-lg hover:translate-y-2 hover:shadow-white shadow-sm shadow-white bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text hover:translate-x-6'>About Me</h1>
         <motion.h2 onClick={handleClick} className='text-xl font-semibold m-5 transition transform duration-500 hover:cursor-pointer hover:bg-gradient-to-r from-red-600 via-yellow-400 to-orange-500 hover:text-transparent hover:bg-clip-text hover:hover:drop-shadow-[0_5px_3px_rgba(0,0,0,0.8)] hover:scale-110 hover:translate-x-7 hover:font-bold'
         >Do you wanna Know about me?</motion.h2>
         {showDetails && (
@@ -250,7 +250,11 @@ const AboutSection=(props)=>{
             duration: 0.8,
             delay: 0.1
         }}
-        className='font-medium text-2xl mt-5 ml-5'>About My Education:</motion.h1>
+        whileHover={{
+            scale: 1.1,
+            x:10
+        }}
+        className='font-medium text-2xl mt-5 ml-5 cursor-pointer'>About My Education:</motion.h1>
         <motion.div className='pt-5 pl-1'
         initial={{
             opacity: 0,
@@ -264,6 +268,7 @@ const AboutSection=(props)=>{
             duration: 1,
             delay: 0.2
         }}
+
         >
             <div className='flex border-2 p-2 rounded-xl mb-1'>
                 <img src={clg} alt="College Logo" className='rounded-2xl mr-10' />
@@ -330,11 +335,355 @@ const SkillSection=(props)=>{
         svgFlip2.onclick=()=>setSection(1)
     }
 
+    const frontEndSkills=[
+        {
+            title:"HTML",
+            level:85,
+        },
+        {
+            title:"CSS",
+            level:75,
+        },
+        {
+            title:"JavaScript",
+            level:70,
+        },
+        {
+            title:"BootStrap",
+            level:80,
+        },
+        {
+            title:"TailWind",
+            level:80,
+        },
+    
+        {
+            title:"React JS",
+            level:70,
+        },
+    ]
+    const backEndSkills=[
+        {
+            title:"Node JS",
+            level:65,
+        },
+
+        {
+            title:"MySQL",
+            level:85,
+        },
+
+        {
+            title:"PHP",
+            level:75,
+        },
+
+        {
+            title:"Laravel",
+            level:65,
+        },
+
+        {
+            title:"FireBase",
+            level:60,
+        },
+    ]
+    const toolSkills=[
+        {
+            title:"Git",
+            level:60,
+        },
+
+        {
+            title:"GitHub",
+            level:70,
+        },
+
+        {
+            title:"Vercel",
+            level:75,
+        },
+
+        {
+            title:"VS Code",
+            level:85,
+        },
+
+        {
+            title:"Figma",
+            level:80,
+        },
+    ]
+
+    const threedSkills=[
+
+        {
+            title:"Blender",
+            level:85,
+        },
+
+        {
+            title:"ThreeJS",
+            level:75,
+        },
+
+        {
+            title:"WebGL",
+            level:70,
+        },
+    ];
+
     return (<>
     <Section>
-        <h1>Skills</h1>
-        <div className="flex items-stretch">
-        <div className="mr-10 mt-7">
+        
+        <motion.h1 className='text-3xl font-bold mb-5 mt-11 border-2 pl-4 pr-4 rounded-2xl pt-1 pb-1 transition transform duration-500 hover:scale-110 hover:shadow-lg hover:translate-y-2 hover:shadow-white shadow-sm shadow-white bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text'
+        initial={{
+            opacity: 1,
+            y: 35,
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+        }}
+        transition={{
+            duration: 0.1,
+            delay: 0
+        }}
+        whileHover={{
+            scale: 1.1,
+            y:10,
+            x:5
+        }}
+        >Skills</motion.h1>
+        <motion.h1 className='text-2xl font-semibold mb-3 text-white'
+        initial={{
+            opacity: 1,
+            y: -35,
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+        }}
+        transition={{
+            duration: 0.5,
+            delay: 0
+        }}
+        >These are some of the skills that I have learned over the past few years...</motion.h1>
+        <div className='text-center'>
+        <motion.div className='grid grid-rows-2 grid-cols-2 gap-4 ml-24'
+        >
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+                <div>
+                    <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>FrontEnd Development</h1>
+                </div>
+                <div className='border-2 m-2 p-2 rounded-2xl pb-7'>
+                    <div className=''>
+                    <motion.div whileInView={"visible"}>   
+                    <div>
+                    <div className="grid grid-rows-2 grid-cols-3 gap-5 p-2">
+                        {frontEndSkills.map((frontEndSkills, index) => (
+                        <div className="" key={index}>
+                            <motion.h3 className="text-black font-medium text-lg cursor-pointer transform duration-200 hover:scale-105 p-2"
+                                initial={{
+                                    opacity:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        opacity:1,
+                                        transition:{
+                                            duration:1,
+                                            delay:1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{frontEndSkills.title}</motion.h3>
+                            <div className="h-2 w-full bg-white rounded-full">
+                            <motion.div
+                                className="h-full bg-orange-600 rounded-full flex pt-2 cursor-pointer"
+                                style={{ width: `${frontEndSkills.level}%` }}
+                                initial={{
+                                    scaleX:0,
+                                    originX:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        scaleX:1,
+                                        transition:{
+                                            duration:1,
+                                            delay: 1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{frontEndSkills.level}%</motion.div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    </motion.div>
+                    </div>
+                </div>
+            </div>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+                <div>
+                    <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>BackEnd Development</h1>
+                </div>
+                <div className='border-2 m-2 p-2 rounded-2xl pb-7'>
+                    <div className=''>
+                    <motion.div whileInView={"visible"}>   
+                    <div>
+                    <div className="grid grid-rows-2 grid-cols-3 gap-5 p-2">
+                        {backEndSkills.map((backEndSkills, index) => (
+                        <div className="" key={index}>
+                            <motion.h3 className="text-black font-medium text-lg cursor-pointer transform duration-200 hover:scale-105 p-2"
+                                initial={{
+                                    opacity:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        opacity:1,
+                                        transition:{
+                                            duration:1,
+                                            delay:1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{backEndSkills.title}</motion.h3>
+                            <div className="h-2 w-full bg-white rounded-full">
+                            <motion.div
+                                className="h-full bg-orange-600 rounded-full flex pt-2 cursor-pointer"
+                                style={{ width: `${backEndSkills.level}%` }}
+                                initial={{
+                                    scaleX:0,
+                                    originX:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        scaleX:1,
+                                        transition:{
+                                            duration:1,
+                                            delay: 1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{backEndSkills.level}%</motion.div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    </motion.div>
+                    </div>
+                </div>
+            </div>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+                <div>
+                    <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>3D Development</h1>
+                </div>
+                <div className='border-2 m-2 p-2 rounded-2xl pb-7'>
+                    <div className=''>
+                    <motion.div whileInView={"visible"}>   
+                    <div>
+                    <div className="grid grid-rows-2 grid-cols-3 gap-5 p-2">
+                        {threedSkills.map((threedSkills, index) => (
+                        <div className="" key={index}>
+                            <motion.h3 className="text-black font-medium text-lg cursor-pointer transform duration-200 hover:scale-105 p-2"
+                                initial={{
+                                    opacity:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        opacity:1,
+                                        transition:{
+                                            duration:1,
+                                            delay:1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{threedSkills.title}</motion.h3>
+                            <div className="h-2 w-full bg-white rounded-full">
+                            <motion.div
+                                className="h-full bg-orange-600 rounded-full flex pt-2 cursor-pointer"
+                                style={{ width: `${threedSkills.level}%` }}
+                                initial={{
+                                    scaleX:0,
+                                    originX:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        scaleX:1,
+                                        transition:{
+                                            duration:1,
+                                            delay: 1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{threedSkills.level}%</motion.div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    </motion.div>
+                    </div>
+                </div>
+            </div>
+            <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105'>
+                <div>
+                    <h1 className='font-semibold text-2xl p-2 transition transform duration-200 hover:scale-125 cursor-pointer drop-shadow-[0_6px_4px_rgba(255,255,255,0.5)]'>Other Tools</h1>
+                </div>
+                <div className='border-2 m-2 p-2 rounded-2xl pb-7'>
+                    <div className=''>
+                    <motion.div whileInView={"visible"}>   
+                    <div>
+                    <div className="grid grid-rows-2 grid-cols-3 gap-5 p-2">
+                        {toolSkills.map((toolSkills, index) => (
+                        <div className="" key={index}>
+                            <motion.h3 className="text-black font-medium text-lg cursor-pointer transform duration-200 hover:scale-105 p-2"
+                                initial={{
+                                    opacity:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        opacity:1,
+                                        transition:{
+                                            duration:1,
+                                            delay:1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{toolSkills.title}</motion.h3>
+                            <div className="h-2 w-full bg-white rounded-full">
+                            <motion.div
+                                className="h-full bg-orange-600 rounded-full flex pt-2 cursor-pointer"
+                                style={{ width: `${toolSkills.level}%` }}
+                                initial={{
+                                    scaleX:0,
+                                    originX:0,
+                                }}
+                                variants={{
+                                    visible:{
+                                        scaleX:1,
+                                        transition:{
+                                            duration:1,
+                                            delay: 1+index*0.2,
+                                        }
+                                    }
+                                }}
+                            >{toolSkills.level}%</motion.div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    </motion.div>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+        <div className="flex items-stretch ml-80">
+            <div className='flex items-stretch ml-7'>
+        <div className="mr-10 mt-9">
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="triangles-2" clip-path="url(#clip0_1_2)">
             <g id="LightGroup">
@@ -371,6 +720,8 @@ const SkillSection=(props)=>{
         </svg>
         </div>
         </div>
+        </div>
+    </div>
     </Section>
     </>)
 }
@@ -641,14 +992,14 @@ const ContactSection=(props)=>{
     <Section>
     <div className="bg-gray-400 p-11 mt-14 pt-14 pb-14 ml-8 rounded-2xl bg-opacity-50 border-4 border-black shadow-lg shadow-white/50 flex items-stretch">
     <div className=''>
-        <h1 className="font-bold text-3xl text-center border-2 rounded-2xl pt-1 pb-1 pl-0 border-black transition-transform duration-300 transform hover:scale-110 hover:text-orange-500 hover:border-white">Contact Us</h1><br />
+        <h1 className="font-bold text-3xl text-center border-2 rounded-2xl pt-1 pb-1 pl-0 border-black transition-transform duration-300 transform hover:scale-110 hover:text-orange-500 hover:border-white cursor-pointer">Contact Us</h1><br />
         {state.succeeded ? (
             <h2 className="text-orange-500 font-bold text-2xl text-center p-16 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] transition-transform duration-300 transform hover:scale-125 hover:text-orange-600 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Thank You for you Message!</h2>
         ) : (
             <form onSubmit={handleSubmit}>
                 <div className="pt-0 pb-3">
                     <br />
-                    <label htmlFor="" className="text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
+                    <label htmlFor="" className="cursor-pointer text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
                         Enter Your Name:&emsp;
                     </label>
                     <input
@@ -661,7 +1012,7 @@ const ContactSection=(props)=>{
                     />
                     <br />
                     <br />
-                    <label htmlFor="" className="text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
+                    <label htmlFor="" className="cursor-pointer text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
                         Enter Your E-Mail:&emsp;
                     </label>
                     <input
@@ -674,7 +1025,7 @@ const ContactSection=(props)=>{
                     />
                     <br />
                     <br />
-                    <label htmlFor="" className="text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
+                    <label htmlFor="" className="cursor-pointer text-2xl font-medium text-black transition-transform duration-300 transform hover:text-orange-500 hover:drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,.8)]">
                         Message:
                     </label>
                     <br />
@@ -704,7 +1055,7 @@ const ContactSection=(props)=>{
         )}
         </div>
         <div className='pl-10 pt-5'>
-        <img src={img} width={505} height={505} className='border-4 border-black rounded-full transition-transform duration-300 transform hover:scale-90 hover:border-orange-600'/>
+        <img src={img} width={505} height={505} className='cursor-pointer border-4 border-black rounded-full transition-transform duration-300 transform hover:scale-90 hover:border-orange-600'/>
         </div>
     </div>
     <div className="flex items-stretch ml-96 mt-5">

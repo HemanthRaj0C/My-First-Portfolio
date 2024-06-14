@@ -8,6 +8,7 @@ import { Avatar2 } from "./Avatar2";
 import { animate, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
+import { BookShelf } from "./BookShelf";
 
 export const Experience = (props) => {
   
@@ -58,6 +59,15 @@ export const Experience = (props) => {
       }}
       >
         <Office />
+
+      </motion.group>
+      <motion.group position-y={-0.65} position-x={0} rotation-z={-0.4} rotation-x={-0.3} rotation-y={2.8} scale={[0.6, 0.6, 0.6]}
+        animate={{
+          x:section==2?1.3:3.5,
+          y:section==2? -6.3:-6,
+        }}
+      >
+        <BookShelf />
       </motion.group>
     </>
   );
