@@ -153,7 +153,7 @@ const AboutSection=(props)=>{
         >Do you wanna Know about me?</motion.h2>
         {showDetails && (
             <>
-            <div className='mb-7 border-dashed border-2 rounded-3xl p-4'>
+            <div className='mb-7 border-dashed border-2 rounded-3xl p-4 transition transform duration-500 hover:scale-95'>
             <motion.h2 className='font-normal text-lg text-black'
             initial={{
                 opacity: 0,
