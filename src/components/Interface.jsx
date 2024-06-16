@@ -1015,7 +1015,7 @@ const ContactSection=(props)=>{
     <Section>
     <div className="bg-gray-400 p-11 mt-14 pt-14 pb-14 ml-8 rounded-2xl bg-opacity-50 border-4 border-black shadow-lg shadow-white/50 flex items-stretch">
     <div className=''>
-        <h1 className="font-bold text-3xl text-center border-2 rounded-2xl pt-1 pb-1 pl-0 border-black transition-transform duration-300 transform hover:scale-110 hover:text-orange-500 hover:border-white cursor-pointer">Contact Us</h1><br />
+        <h1 className="font-bold text-3xl text-center border-2 rounded-2xl pt-1 pb-1 pl-0 border-black transition-transform duration-300 transform hover:scale-110 hover:text-orange-500 hover:border-white cursor-pointer">Contact Me</h1><br />
         {state.succeeded ? (
             <h2 className="text-orange-500 font-bold text-2xl text-center p-16 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] transition-transform duration-300 transform hover:scale-125 hover:text-orange-600 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Thank You for you Message!</h2>
         ) : (
