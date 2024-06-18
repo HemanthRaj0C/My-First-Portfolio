@@ -9,18 +9,32 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { ScrollManager } from "./components/ScrollManager";
 import { Menu } from "./components/Menu";
 import { MotionConfig } from "framer-motion";
+import ConstructionNotice from "./ConstructionNotice";
+import './index.css'
 
 function App() {
   const [section, setSection]=useState(0)
   const [started, setStarted]=useState(false)
   const[menuOpened,setMenuOpened]=useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(()=>{
     setMenuOpened(false);
   },[section])
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1279 || window.innerHeight <= 719);
+    };
+  
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
+    {isMobile ? <ConstructionNotice /> : 
     <MotionConfig transition={{
       type: "spring",
       mass:3,
@@ -30,7 +44,7 @@ function App() {
     }}>
     <LoadingScreen started={started} setStarted={setStarted} />
     <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
-      <color attach="background" args={["#ececec"]} />
+      <color attach="background" args={["#DBEAFE"]} />
       <ScrollControls pages={5} damping={0.1}>
       <ScrollManager section={section} onSectionChange={setSection} setSection={setSection} />
       <Scroll>
@@ -43,7 +57,7 @@ function App() {
     </Canvas>
     <Menu onSectionChange={setSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
     <Leva hidden />
-    </MotionConfig>
+    </MotionConfig>}
     </>
   );
 }

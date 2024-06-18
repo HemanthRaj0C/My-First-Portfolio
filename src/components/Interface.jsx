@@ -92,14 +92,14 @@ const HomeSection=(props)=>{
         <h3 className="text-2xl p-1 pt-10">I'm a <span className="text-2xl p-1 pt-5 font-bold">Web Developer, 3D Artist and Designer</span></h3>
         <h3 className="text-2xl p-1">I love to <span className="text-2xl p-1 font-bold">create good looking and beautiful websites</span></h3>
 
-        <div className="flex items-stretch mt-20 ">
+        <div className="md:flex items-stretch mt-20">
         <button onClick={()=>setSection(1)} className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">About Me</button>
         <button onClick={()=>setSection(2)} className="p-2 mr-4 border-2 pl-4 pr-4 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Skills</button>
         <button onClick={()=>setSection(3)} className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Projects</button>
         <button onClick={()=>setSection(4)}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Contact Me</button>
         {showDetails && (
             <>
-            <motion.div className='flex'
+            <motion.div className='md:flex'
             initial={{
                 opacity: 0,
                 y: -50,
@@ -117,10 +117,10 @@ const HomeSection=(props)=>{
                 delay: 0.1
             }}
             >
-            <img src={github} alt='' onClick={handleClickRoation1} style={style1} className='ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
-            <button onClick={()=>window.open('https://github.com/HemanthRaj0C')}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">GitHub Profile</button>
-            <img src={resume} alt='' onClick={handleClickRoation2} style={style2} className='mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
-            <button onClick={()=>window.open("https://docs.google.com/document/d/1aD4aytc_o_Hdr26BJ7iI94ed26ghPdX-9ttBXA3QT4c/edit?usp=sharing")}className="p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
+            <img src={github} alt='' onClick={handleClickRoation1} style={style1} className='md:ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <button onClick={()=>window.open('https://github.com/HemanthRaj0C')}className="md:p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">GitHub Profile</button>
+            <img src={resume} alt='' onClick={handleClickRoation2} style={style2} className='md:mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <button onClick={()=>window.open("https://docs.google.com/document/d/1aD4aytc_o_Hdr26BJ7iI94ed26ghPdX-9ttBXA3QT4c/edit?usp=sharing")}className="md:p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
             </motion.div>
             </>
         )}
@@ -493,7 +493,7 @@ const SkillSection=(props)=>{
         }}
         >These are some of the skills that I have learned over the past few years...</motion.h1>
         <div className='text-center'>
-        <motion.div className='grid grid-rows-2 grid-cols-2 gap-4 ml-24'
+        <motion.div className='md:grid md:grid-rows-2 md:grid-cols-2 md:gap-4 md:ml-24'
         >
             <div className='border-2 rounded-3xl transition transform duration-300 hover:scale-105 shadow-gray-800 shadow-lg'>
                 <div>
