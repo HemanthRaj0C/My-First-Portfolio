@@ -93,7 +93,7 @@ kbd {
 
 .modal1 {
   width: clamp(50%, 800px, 90%);
-  height: min(50%, 345px);
+  height: min(50%, 325px);
   border-radius: 12px;
   padding: 10px;
   border-color: black;
@@ -103,7 +103,7 @@ kbd {
 
 .modal2 {
   width: clamp(50%, 800px, 90%);
-  height: min(50%, 375px);
+  height: min(50%, 350px);
   border-radius: 12px;
   padding: 10px;
   border-color: black;
