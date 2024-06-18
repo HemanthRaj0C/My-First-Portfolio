@@ -53,9 +53,7 @@ const Modal1=({handleClose, text})=>{
                 </div>
             </motion.div>
         </BackDrop>
-
     )
-
 }
 
 export default Modal1

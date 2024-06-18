@@ -29,9 +29,9 @@ const ConstructionNotice = () => {
 
   return (
       <div className=''>
-      <div className='fixed top-0 left-0 w-full h-full bg-blue-100 '>
-      <h1 className='text-center border-2 border-white m-2 rounded-full text-orange-400 font-bold text-4xl drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.8)] transition transform duration-200 hover:scale-90 shadow-white shadow-md mt-36'>Under Construction</h1>
-      <div className='border-2 border-dashed border-black mb-10 mt-10 ml-2 mr-2 text-center transition tarnsform duration-300 hover:scale-90 rounded-2xl'>
+      <div className='fixed top-0 left-0 w-full h-full bg-blue-200 '>
+      <h1 className='text-center border-2 border-white m-2 rounded-full text-orange-400 font-bold text-4xl drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.8)] transition transform duration-200 hover:scale-95 shadow-white shadow-md mt-36'>Under Construction</h1>
+      <div className='border-2 border-dashed border-black mb-10 mt-10 ml-2 mr-2 text-center transition tarnsform duration-300 hover:scale-95 rounded-2xl shadow-white shadow-lg'>
       <p className='font-semibold text-lg'>Mobile experience for this Website is currently being built.</p>
       <p className='font-semibold text-lg'>Please visit on a Desktop for the Full Experience.</p>
       </div>

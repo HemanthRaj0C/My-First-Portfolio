@@ -92,7 +92,7 @@ kbd {
 }
 
 .modal1 {
-  width: clamp(50%, 700px, 90%);
+  width: clamp(50%, 800px, 90%);
   height: min(50%, 345px);
   border-radius: 12px;
   padding: 10px;
@@ -102,7 +102,7 @@ kbd {
 }
 
 .modal2 {
-  width: clamp(50%, 700px, 90%);
+  width: clamp(50%, 800px, 90%);
   height: min(50%, 375px);
   border-radius: 12px;
   padding: 10px;
@@ -112,7 +112,7 @@ kbd {
 }
 
 .modal3 {
-  width: clamp(50%, 700px, 90%);
+  width: clamp(50%, 800px, 90%);
   height: min(50%, 320px);
   border-radius: 12px;
   padding: 10px;

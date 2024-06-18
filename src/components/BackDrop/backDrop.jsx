@@ -13,8 +13,6 @@ const BackDrop=({children, onClick})=>{
         </motion.div>
 
     )
-
-
 }
 
 export default BackDrop;

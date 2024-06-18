@@ -118,10 +118,10 @@ const HomeSection=(props)=>{
                 delay: 0.1
             }}
             >
-            <img src={github} alt='' onClick={handleClickRoation1} style={style1} className='md:ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <img src={github} alt='GitHub' onClick={handleClickRoation1} style={style1} className='md:ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
             <button onClick={()=>window.open('https://github.com/HemanthRaj0C')}className="md:p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">GitHub Profile</button>
-            <img src={resume} alt='' onClick={handleClickRoation2} style={style2} className='md:mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
-            <button onClick={()=>window.open("https://docs.google.com/document/d/1aD4aytc_o_Hdr26BJ7iI94ed26ghPdX-9ttBXA3QT4c/edit?usp=sharing")}className="md:p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
+            <img src={resume} alt='Resume' onClick={handleClickRoation2} style={style2} className='md:mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
+            <button onClick={()=>window.open("https://drive.google.com/file/d/1YKeoEzNElUwMqohzAhQ5SwNlmOHo9JgT/view?usp=sharing")}className="md:p-2 mr-4 border-2 pl-2 pr-2 border-black rounded-full transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Download Resume</button>
             </motion.div>
             </>
         )}
@@ -295,12 +295,12 @@ const AboutSection=(props)=>{
 
         >
             <div className='flex border-2 p-2 rounded-xl mb-1 transition transform duration-500 hover:scale-95'>
-                <img src={clg} alt="College Logo" className='rounded-2xl mr-10' />
+                <img src={clg} alt="College" className='rounded-2xl mr-10' />
                 <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/JZ14TKSqGzMp2s6YA')}>Chennai Institute of Technology</span> <br />Bachelor of Engineering in CSE (Cyber Security) CGPA: 9.8/10</h1>
                 <h2></h2>
             </div>
             <div className='flex border-2 p-2 rounded-xl transition transform duration-500 hover:scale-95'>
-                <img src={scl} alt="School Logo" className='rounded-2xl mr-5'/>
+                <img src={scl} alt="School" className='rounded-2xl mr-5'/>
                 <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/CcW4qsS56Cpj6duu5')}>Annamalaiyaar Matriculation Higher Secondary School</span> <br />Higher Secondary Education: 91.83%</h1>
             </div>
         </motion.div>
@@ -855,7 +855,7 @@ const ProjectSection=(props)=>{
                 duration: 0.1
             }}
             >
-                <motion.img src={chatBox} alt="Chat-Box" className='border-red-600 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer ' 
+                <motion.img src={chatBox} alt="Chat-Box" className='border-red-600 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer' 
                 onClick={openModal1}
                 whileHover={{
                     scale:0.95
@@ -929,7 +929,7 @@ const ProjectSection=(props)=>{
                 duration: 0.1
             }}>
                 
-            <motion.img src={retro} alt="Retro Website" className='border-blue-400 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer'
+            <motion.img src={retro} alt="Retro-Website" className='border-blue-400 h-52 w-72 rounded-xl border-2 border-solid tarnsition transform duration-500 hover:border-dashed hover:border-orange-500 cursor-pointer'
             onClick={openModal3}
             whileHover={{
                 scale:0.95
