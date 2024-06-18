@@ -9,6 +9,7 @@ import { animate, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { BookShelf } from "./BookShelf";
+import { Cursor } from "./Cursor";
 
 export const Experience = (props) => {
   
@@ -24,7 +25,6 @@ export const Experience = (props) => {
     <>
       <BackGround />
       <ambientLight intensity={1} />
-
       <motion.group position={[-6, -0.9, 0]} 
       animate={{
         x:section==1?2.2:-6.5,

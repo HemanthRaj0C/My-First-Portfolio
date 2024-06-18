@@ -293,12 +293,12 @@ const AboutSection=(props)=>{
         }}
 
         >
-            <div className='flex border-2 p-2 rounded-xl mb-1'>
+            <div className='flex border-2 p-2 rounded-xl mb-1 transition transform duration-500 hover:scale-95'>
                 <img src={clg} alt="College Logo" className='rounded-2xl mr-10' />
                 <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/JZ14TKSqGzMp2s6YA')}>Chennai Institute of Technology</span> <br />Bachelor of Engineering in CSE (Cyber Security) CGPA: 9.8/10</h1>
                 <h2></h2>
             </div>
-            <div className='flex border-2 p-2 rounded-xl'>
+            <div className='flex border-2 p-2 rounded-xl transition transform duration-500 hover:scale-95'>
                 <img src={scl} alt="School Logo" className='rounded-2xl mr-5'/>
                 <h1 className='font-normal text-lg'><span className='cursor-pointer transition transform duration-300 hover:text-orange-500 hover:drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.25)]' onClick={() => window.open('https://maps.app.goo.gl/CcW4qsS56Cpj6duu5')}>Annamalaiyaar Matriculation Higher Secondary School</span> <br />Higher Secondary Education: 91.83%</h1>
             </div>
