@@ -10,16 +10,16 @@ import { useEffect } from 'react'
 export function BookShelf(props) {
   const { nodes, materials } = useGLTF('models/Book.glb')
   const group=useRef()
-  const {animations: takingAnimation} = useFBX("animations/Taking Item.fbx")
+  const {animations: talkingAnimation} = useFBX("animations/Talking.fbx")
 
-  takingAnimation[0].name="Taking"
+  talkingAnimation[0].name="Talking"
 
-  const {actions}=useAnimations(takingAnimation,group)
+  const {actions}=useAnimations(talkingAnimation,group)
 
   useEffect(()=>{
-    actions["Taking"].reset().fadeIn(0.5).play()
+    actions["Talking"].reset().fadeIn(0.5).play()
     return ()=>{
-        actions["Taking"].reset().fadeOut(0.5)
+        actions["Talking"].reset().fadeOut(0.5)
     }
   },[])
 
