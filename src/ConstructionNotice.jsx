@@ -31,11 +31,11 @@ const ConstructionNotice = () => {
       <div className=''>
       <div className='fixed top-0 left-0 w-full h-full bg-blue-100 '>
       <h1 className='text-center border-2 border-white m-2 rounded-full text-orange-400 font-bold text-4xl drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.8)] transition transform duration-200 hover:scale-90 shadow-white shadow-md mt-36'>Under Construction</h1>
-      <div className='border-2 border-dashed border-black mb-10 mt-10 ml-2 mr-2 text-center transition tarnsform duration-300 hover:scale-90'>
+      <div className='border-2 border-dashed border-black mb-10 mt-10 ml-2 mr-2 text-center transition tarnsform duration-300 hover:scale-90 rounded-2xl'>
       <p className='font-semibold text-lg'>Mobile experience for this Website is currently being built.</p>
       <p className='font-semibold text-lg'>Please visit on a Desktop for the Full Experience.</p>
       </div>
-      <div className='border-2 text-center border-black p-1 m-2 shadow-lg shadow-white border-double'>
+      <div className='border-2 text-center border-black p-1 m-2 shadow-lg shadow-white border-double rounded-2xl'>
       <h1 className='font-semibold text-lg mb-5'>In the meantime, you can check out our GitHub Profile, where you can find more information about me.</h1>
       <div className='flex items-center justify-center m-2'>
       <img src={github} alt='' onClick={handleClickRoation1} style={style1} className='md:ml-20 mt-1 mr-2 cursor-pointer h-9 w-9 border-2 border-orange-500 rounded-full shadow-orange-500 shadow-sm transition transform duration-500 hover:shadow-lg hover:shadow-orange-400 hover:scale-110'/>
